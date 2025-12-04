@@ -1,0 +1,8 @@
+{
+  "name": "NYPL Shop AI Enhanced",
+  "description": "A reimagined e-commerce experience for the New York Public Library Shop, featuring an AI Librarian for personalized recommendations, visual search, and semantic discovery.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
