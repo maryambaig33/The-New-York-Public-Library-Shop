@@ -2,8 +2,10 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { MOCK_PRODUCTS } from "../constants";
 import { Product } from "../types";
 
-// Initialize Gemini Client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize Gemini Client safely. 
+// If API_KEY is missing during build/runtime, we fallback to empty string to allow app to render,
+// though actual API calls will fail gracefully later.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
 
 /**
  * Uses Gemini to match a natural language query to product IDs.
