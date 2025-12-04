@@ -7,6 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
+      // Polyfill process for browser environment to prevent ReferenceError
+      if (typeof process === 'undefined') {
+        window.process = { env: {} };
+      }
+    </script>
+    <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -46,6 +52,7 @@
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
     "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
